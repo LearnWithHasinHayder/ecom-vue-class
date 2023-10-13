@@ -9,6 +9,7 @@ import Protected from '../components/Protected.vue'
 import Login from '../components/Login.vue'
 import {authStore} from '../store/store'
 import Cart from '../components/Cart.vue'
+import Orders from '../components/Orders.vue'
 
 import Admin from '../components/Admin.vue'
 import Editor from '../components/Editor.vue'
@@ -65,6 +66,12 @@ const routes = [
     {
         path: '/cart', components: {
             default: Cart,
+            LeftSideBar: Sidebar
+        }
+    },
+    {
+        path: '/orders', components: {
+            default: Orders,
             LeftSideBar: Sidebar
         }
     },

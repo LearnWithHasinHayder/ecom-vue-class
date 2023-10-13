@@ -43,6 +43,10 @@ import { cart } from '../store/cart'
                 <button @click="cart.emptyCart()" class="ml-5 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
                     Empty Cart
                 </button>
+
+                <button @click="cart.checkout()" class="ml-5 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                    Place Order
+                </button>
             </div>
         </div>
     </div>
