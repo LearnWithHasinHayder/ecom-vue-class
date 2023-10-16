@@ -3,7 +3,7 @@
 import { ref, reactive, onBeforeMount } from 'vue'
 import axios from 'axios'
 import { cart } from '../store/cart'
-import {wishlist} from '../store/wishlist'
+import { wishlist } from '../store/wishlist'
 
 import WishListIcon from './WishListIcon.vue'
 import { authStore } from '../store/store'
@@ -17,7 +17,7 @@ onBeforeMount(() => {
         .then(res => {
             products.value = res.data
         })
-    
+
     wishlist.fetchWishlist()
 })
 
@@ -33,7 +33,9 @@ onBeforeMount(() => {
             <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-20">
                 <div v-for="product in products" :key="product.id" class="group relative">
                     <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
-                        <img :src="product.image" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                        <router-link :to="{ name: 'product', params: { id: product.id } }">
+                            <img :src="product.image" class="h-full w-full object-cover object-center lg:h-full lg:w-full" />
+                        </router-link>
                     </div>
                     <div class="mt-4 flex justify-between">
                         <div>
